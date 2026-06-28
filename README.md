@@ -30,47 +30,46 @@ Before generating any output, the AI agent must run the input through the SLIVER
 
 ---
 
-## Quick Installation (One-Liners)
+## Installation & Configuration
 
-To install and activate SLIVER in your current project workspace, run any of the following commands in your terminal:
+### 1. Codex CLI (As a Native Plugin)
+You can install SLIVER directly from this GitHub repository using the Codex CLI:
 
-### Option A: Via `curl` (Recommended)
 ```bash
-curl -fsSL https://raw.githubusercontent.com/bywarmx/sliver/main/build_rules.py | python3
+# Add the repository to your Codex marketplace list
+codex plugin marketplace add https://github.com/bywarmx/sliver
+
+# Install the sliver plugin
+codex plugin add sliver@sliver
 ```
+*Note: To verify it is loaded, run `/skills` or `/plugin list` in Codex. To invoke it explicitly in a chat thread, type `$sliver`.*
 
-### Option B: Via `wget`
-```bash
-wget -qO- https://raw.githubusercontent.com/bywarmx/sliver/main/build_rules.py | python3
-```
+### 2. Google Antigravity (AGY) & Local IDEs
+For AGY and local development tools, you can deploy the rules automatically using the included Python helper script or install them manually:
 
-### Option C: Via `git`
-```bash
-git clone https://github.com/bywarmx/sliver.git && cd sliver && python3 build_rules.py
-```
+#### Option A: Automatic Installer (All IDEs & CLI)
+Run any of the following commands in the root of your project workspace to deploy SLIVER rules automatically:
 
----
+* **Via `curl` (Recommended):**
+  ```bash
+  curl -fsSL https://raw.githubusercontent.com/bywarmx/sliver/main/build_rules.py | python3
+  ```
+* **Via `wget`:**
+  ```bash
+  wget -qO- https://raw.githubusercontent.com/bywarmx/sliver/main/build_rules.py | python3
+  ```
+* **Via `git`:**
+  ```bash
+  git clone https://github.com/bywarmx/sliver.git && cd sliver && python3 build_rules.py
+  ```
 
-## Manual Installation (Per Agent)
+This will automatically create `.agents/AGENTS.md` (for AGY), `.cursorrules` (for Cursor), `.windsurfrules` (for Windsurf), `.clinerules` (for Cline), and `copilot-instructions.md` (for Copilot/Codex).
 
-If you prefer to configure the rules manually, create the corresponding file at the root of your project workspace and paste the SLIVER rules inside:
+#### Option B: Manual Installation
+Create the corresponding rule file at the root of your project workspace and paste the SLIVER rules inside:
 
-#### 1. Google Antigravity (AGY)
-* **File:** `.agents/AGENTS.md`
-* AGY automatically loads this file at startup.
-
-#### 2. Cursor IDE
-* **File:** `.cursorrules`
-* Applies to all Chat and Composer actions.
-
-#### 3. Windsurf IDE
-* **File:** `.windsurfrules`
-* Applies to the Cascade assistant.
-
-#### 4. Cline (VS Code Extension)
-* **File:** `.clinerules`
-* Loads as global agent constraints.
-
-#### 5. GitHub Copilot / Codex
-* **File:** `copilot-instructions.md` (or `.github/copilot-instructions.md`)
-* Copilot will respect these constraints in chat and inline completions.
+* **Antigravity (AGY):** Create `.agents/AGENTS.md`. AGY automatically loads this file at startup.
+* **Cursor IDE:** Create `.cursorrules`. Applies to all Chat and Composer actions.
+* **Windsurf IDE:** Create `.windsurfrules`. Applies to the Cascade assistant.
+* **Cline (VS Code Extension):** Create `.clinerules`. Loads as global agent constraints.
+* **GitHub Copilot / Codex:** Create `copilot-instructions.md` (or `.github/copilot-instructions.md`). Copilot will respect these constraints in chat and inline completions.
