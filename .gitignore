@@ -1,0 +1,2 @@
+# Exclude uploader script from remote repository
+gh-upload.py
