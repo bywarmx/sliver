@@ -20,12 +20,13 @@ By enforcing the SLIVER rules, AI assistants operate in a highly cost-efficient 
 
 Before generating any output, the AI agent must run the input through the SLIVER ladder:
 
-1. **YAGNI (You Ain't Gonna Need It):** Decline non-essential requests.
-2. **Standard Library Priority:** Exclude external packages if native tools solve it.
-3. **Reusability Check:** Import or inherit existing functions. Do not duplicate.
-4. **No Explanations (Zero-Prose):** Never explain code, changes, or logic. Return ONLY the code or diff.
-5. **No Comments/Docstrings:** Remove all comments, docstrings, and type annotations unless strictly requested.
-6. **Strict Diff-Only:** Return only the exact modified lines in diff format. Never output unmodified surrounding code.
+1. **Response Prefix:** Start the response with `[SLIVER]` (followed by a newline) on the very first line to verify the framework is active.
+2. **YAGNI (You Ain't Gonna Need It):** Decline non-essential requests.
+3. **Standard Library Priority:** Exclude external packages if native tools solve it.
+4. **Reusability Check:** Import or inherit existing functions. Do not duplicate.
+5. **No Explanations (Zero-Prose):** Never explain code, changes, or logic. Return ONLY the code or diff.
+6. **No Comments/Docstrings:** Remove all comments, docstrings, and type annotations unless strictly requested.
+7. **Strict Diff-Only:** Return only the exact modified lines in diff format. Never output unmodified surrounding code.
 
 ---
 
