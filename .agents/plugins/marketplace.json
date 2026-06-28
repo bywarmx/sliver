@@ -1,14 +1,20 @@
 {
   "name": "sliver",
-  "version": "1.0.0",
-  "description": "Ultra-strict token optimizer.",
+  "interface": {
+    "displayName": "Sliver"
+  },
   "plugins": [
     {
-      "id": "sliver",
       "name": "sliver",
-      "description": "Ultra-strict token optimizer for AI coding agents.",
-      "source": "https://github.com/bywarmx/sliver",
-      "path": "../../"
+      "source": {
+        "source": "local",
+        "path": "plugins/sliver"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_USE"
+      },
+      "category": "Productivity"
     }
   ]
 }

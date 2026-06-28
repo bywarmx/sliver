@@ -1,0 +1,21 @@
+{
+  "name": "sliver",
+  "version": "1.0.0",
+  "description": "Ultra-strict token optimizer for AI coding agents.",
+  "author": {
+    "name": "bywarmx",
+    "url": "https://github.com/bywarmx/sliver"
+  },
+  "homepage": "https://github.com/bywarmx/sliver",
+  "repository": "https://github.com/bywarmx/sliver",
+  "license": "MIT",
+  "keywords": ["sliver", "token-optimizer", "codex"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Sliver",
+    "shortDescription": "Ultra-strict token-saving rules for Codex",
+    "longDescription": "Ultra-strict token-saving rules for AI coding agents.",
+    "developerName": "bywarmx",
+    "category": "Productivity"
+  }
+}
