@@ -13,20 +13,32 @@ Before generating any output, the AI agent must run the input through the SLIVER
 5. **No Comments/Docstrings:** Remove all comments, docstrings, and type annotations unless strictly requested.
 6. **Strict Diff-Only:** Return only the exact modified lines in diff format. Never output unmodified surrounding code.
 
-## Target Tool Configurations
+---
 
-SLIVER rules are designed to be deployed to the following files depending on the agent in use:
+## Installation & Configuration Instructions
 
-* **Antigravity (AGY):** `.agents/AGENTS.md`
-* **Cursor:** `.cursorrules`
-* **Windsurf:** `.windsurfrules`
-* **Cline:** `.clinerules`
-* **GitHub Copilot / Codex:** `copilot-instructions.md`
+You can configure SLIVER manually or automatically for each AI assistant:
 
-## Installation
-
-Run the deployer script in your workspace folder to automatically configure all AI tools present:
-
+### Method 1: Automatic Installation (Recommended)
+Copy the `build_rules.py` script to the root of your project directory and run it:
 ```bash
 python3 build_rules.py
 ```
+This script will automatically detect and generate the correct rules file for all supported AI agents present in your workspace.
+
+### Method 2: Manual Installation (Per Agent)
+
+#### 1. Google Antigravity (AGY)
+Create a file named `.agents/AGENTS.md` in the root of your project workspace and paste the SLIVER rules inside. AGY automatically loads this file at startup.
+
+#### 2. Cursor IDE
+Create a file named `.cursorrules` in the root of your project workspace and paste the SLIVER rules inside. Cursor applies these instructions to all Chat and Composer actions.
+
+#### 3. Windsurf IDE
+Create a file named `.windsurfrules` in the root of your project workspace and paste the SLIVER rules. Windsurf will apply them to the Cascade assistant.
+
+#### 4. Cline (VS Code Extension)
+Create a file named `.clinerules` in the root of your project workspace and paste the rules. Cline will load them as global agent constraints.
+
+#### 5. GitHub Copilot / Codex
+Create a file named `copilot-instructions.md` at the root of your repository (or inside `.github/copilot-instructions.md`) and paste the rules. Copilot will respect these constraints in chat and inline completions.

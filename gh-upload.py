@@ -15,27 +15,23 @@ def upload():
     username_input = input("GitHub Username [default: bywarmx]: ").strip()
     username = username_input if username_input else "bywarmx"
     
-    # Extract repo name from SLIVER.md or current directory
+    # Extract repo name from README.md or current directory
     repo = ""
-    for filename in ["SLIVER.md", "README.md"]:
-        if os.path.exists(filename):
-            try:
-                with open(filename, 'r') as f:
-                    for line in f:
-                        if line.startswith("#"):
-                            title = line.replace("#", "").strip().split(":")[0].strip()
-                            repo = "".join(c for c in title if c.isalnum() or c in " -_").replace(" ", "-").lower()
-                            break
-            except Exception:
-                pass
-        if repo:
-            break
+    filename = "README.md"
+    if os.path.exists(filename):
+        try:
+            with open(filename, 'r') as f:
+                for line in f:
+                    if line.startswith("#"):
+                        title = line.replace("#", "").strip().split(":")[0].strip()
+                        repo = "".join(c for c in title if c.isalnum() or c in " -_").replace(" ", "-").lower()
+                        break
+        except Exception:
+            pass
     if not repo:
         repo = os.path.basename(os.getcwd())
         
-    repo_input = input(f"Repository Name [default: {repo}]: ").strip()
-    if repo_input:
-        repo = repo_input
+    print(f"[*] Repository Name (from README): {repo}")
         
     token = getpass.getpass("GitHub Personal Access Token (hidden): ").strip()
     
