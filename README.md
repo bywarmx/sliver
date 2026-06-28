@@ -15,30 +15,47 @@ Before generating any output, the AI agent must run the input through the SLIVER
 
 ---
 
-## Installation & Configuration Instructions
+## Quick Installation (One-Liners)
 
-You can configure SLIVER manually or automatically for each AI assistant:
+To install and activate SLIVER in your current project workspace, run any of the following commands in your terminal:
 
-### Method 1: Automatic Installation (Recommended)
-Copy the `build_rules.py` script to the root of your project directory and run it:
+### Option A: Via `curl` (Recommended)
 ```bash
-python3 build_rules.py
+curl -fsSL https://raw.githubusercontent.com/bywarmx/sliver/main/build_rules.py | python3
 ```
-This script will automatically detect and generate the correct rules file for all supported AI agents present in your workspace.
 
-### Method 2: Manual Installation (Per Agent)
+### Option B: Via `wget`
+```bash
+wget -qO- https://raw.githubusercontent.com/bywarmx/sliver/main/build_rules.py | python3
+```
+
+### Option C: Via `git`
+```bash
+git clone https://github.com/bywarmx/sliver.git && cd sliver && python3 build_rules.py
+```
+
+---
+
+## Manual Installation (Per Agent)
+
+If you prefer to configure the rules manually, create the corresponding file at the root of your project workspace and paste the SLIVER rules inside:
 
 #### 1. Google Antigravity (AGY)
-Create a file named `.agents/AGENTS.md` in the root of your project workspace and paste the SLIVER rules inside. AGY automatically loads this file at startup.
+* **File:** `.agents/AGENTS.md`
+* AGY automatically loads this file at startup.
 
 #### 2. Cursor IDE
-Create a file named `.cursorrules` in the root of your project workspace and paste the SLIVER rules inside. Cursor applies these instructions to all Chat and Composer actions.
+* **File:** `.cursorrules`
+* Applies to all Chat and Composer actions.
 
 #### 3. Windsurf IDE
-Create a file named `.windsurfrules` in the root of your project workspace and paste the SLIVER rules. Windsurf will apply them to the Cascade assistant.
+* **File:** `.windsurfrules`
+* Applies to the Cascade assistant.
 
 #### 4. Cline (VS Code Extension)
-Create a file named `.clinerules` in the root of your project workspace and paste the rules. Cline will load them as global agent constraints.
+* **File:** `.clinerules`
+* Loads as global agent constraints.
 
 #### 5. GitHub Copilot / Codex
-Create a file named `copilot-instructions.md` at the root of your repository (or inside `.github/copilot-instructions.md`) and paste the rules. Copilot will respect these constraints in chat and inline completions.
+* **File:** `copilot-instructions.md` (or `.github/copilot-instructions.md`)
+* Copilot will respect these constraints in chat and inline completions.
