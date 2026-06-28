@@ -10,7 +10,7 @@
   "repository": "https://github.com/bywarmx/sliver",
   "license": "MIT",
   "keywords": ["sliver", "token-optimizer", "codex"],
-  "skills": "./skills/",
+  "skills": "../skills/",
   "interface": {
     "displayName": "Sliver",
     "shortDescription": "Ultra-strict token-saving rules for Codex",
