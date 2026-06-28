@@ -5,6 +5,8 @@
   "plugins": [
     {
       "id": "sliver",
+      "name": "sliver",
+      "description": "Ultra-strict token optimizer for AI coding agents.",
       "path": "../../"
     }
   ]
