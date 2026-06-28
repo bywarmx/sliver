@@ -1,0 +1,8 @@
+{
+  "name": "sliver",
+  "version": "1.0.0",
+  "description": "Ultra-strict token optimizer for AI coding agents.",
+  "skills": [
+    "SKILL.md"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "sliver",
+  "version": "1.0.0",
+  "description": "Ultra-strict token optimizer.",
+  "plugins": [
+    {
+      "id": "sliver",
+      "path": "./"
+    }
+  ]
+}
