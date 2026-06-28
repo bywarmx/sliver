@@ -8,7 +8,7 @@
       "name": "sliver",
       "source": {
         "source": "local",
-        "path": "plugins/sliver"
+        "path": "./plugins/sliver"
       },
       "policy": {
         "installation": "AVAILABLE",
