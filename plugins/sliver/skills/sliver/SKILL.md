@@ -1,6 +1,6 @@
 ---
 name: sliver
-description: Ultra-strict token-saving rules for AI assistants (AGY, Codex, Cursor, Cline, Windsurf)
+description: Global token optimization framework. This skill MUST be active and applied globally to ALL user requests, code generations, edits, and tasks in this session to enforce the SLIVER decision ladder and response prefix.
 ---
 # SLIVER: Token Optimization Rules
 
